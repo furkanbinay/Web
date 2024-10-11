@@ -125,14 +125,19 @@
         table {
             width: 50%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 0 auto;
         }
         th, td {
             padding: 10px;
             border: 1px solid #ddd;
+            text-align: left;
         }
-        td input, td select {
+        h1, h4 {
+            text-align: center;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select {
             width: 100%;
+            padding: 5px;
         }
     </style>
 </head>
@@ -142,8 +147,10 @@
     <hr>
 
     <form>
-        <h4>Hesap Bilgileriniz</h4>
         <table>
+            <tr>
+                <th colspan="2"><h4>Hesap Bilgileriniz</h4></th>
+            </tr>
             <tr>
                 <td>Kullanıcı Adı:</td>
                 <td><input type="text" name="username" placeholder="Kullanıcı adı giriniz" required></td>
@@ -156,10 +163,9 @@
                 <td>Parola:</td>
                 <td><input type="password" name="parola" placeholder="Parola giriniz" required></td>
             </tr>
-        </table>
-
-        <h4>Kişisel Bilgileriniz</h4>
-        <table>
+            <tr>
+                <th colspan="2"><h4>Kişisel Bilgileriniz</h4></th>
+            </tr>
             <tr>
                 <td>Ad:</td>
                 <td><input type="text" name="ad"></td>
@@ -195,14 +201,18 @@
                     <input type="checkbox" name="hobiler"> Kitap
                 </td>
             </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Kaydet">
+                </td>
+            </tr>
         </table>
-
-        <input type="submit" value="Kaydet">
     </form>
 
 </body>
 </html>
 
+  
 <!DOCTYPE html>
 <html lang="tr">
 <head>

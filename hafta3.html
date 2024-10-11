@@ -177,3 +177,52 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Tablo Düzeni</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tablo Düzeni Örneği</h1>
+
+    <table>
+        <tr>
+            <td colspan="3">Cell 1</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Cell 4</td>
+            <td>Cell 2</td>
+            <td>Cell 3</td>
+        </tr>
+        <tr>
+            <td>Cell 5</td>
+            <td>Cell 6</td>
+        </tr>
+        <tr>
+            <td>Cell 7</td>
+            <td>Cell 8</td>
+        </tr>
+        <tr>
+            <td>Cell 9</td>
+            <td colspan="2">Cell 10</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+

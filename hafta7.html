@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "A A A"
+        "B C D"
+        "E E F"
+        "G G G";
+      grid-gap: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .container > div {
+      padding: 20px;
+      color: white;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .A { grid-area: A; background-color: #0a2e6c; }
+    .B { grid-area: B; background-color: #e69538; min-height: 120px; }
+    .C { grid-area: C; background-color: #92b05e; min-height: 120px; }
+    .D { grid-area: D; background-color: #d44c3b; min-height: 120px; }
+    .E { grid-area: E; background-color: #f3c230; }
+    .F { grid-area: F; background-color: #7a3b8f; }
+    .G { grid-area: G; background-color: #5cb85c; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="A">A</div>
+  <div class="B">B</div>
+  <div class="C">C</div>
+  <div class="D">D</div>
+  <div class="E">E</div>
+  <div class="F">F</div>
+  <div class="G">G</div>
+</div>
+</body>
+</html>

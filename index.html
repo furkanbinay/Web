@@ -20,7 +20,7 @@
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
@@ -32,20 +32,45 @@
             color: inherit;
         }
 
-        .project-links a {
-            display: block;
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
             margin: 10px 0;
-            padding: 10px;
-            color: #3498db;
-            text-decoration: none;
-            border: 2px solid #3498db;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .project-links a:hover {
-            background-color: #3498db;
-            color: #fff;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #3498db;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            color: #333;
         }
 
         /* Koyu tema için stil ayarları */
@@ -58,14 +83,13 @@
             background-color: #333;
         }
 
-        .dark-theme .project-links a {
-            color: #77bdfb;
-            border-color: #77bdfb;
+        .dark-theme .project-card {
+            background-color: #444;
         }
 
-        .dark-theme .project-links a:hover {
-            background-color: #77bdfb;
-            color: #1e1e1e;
+        .dark-theme .tag {
+            background-color: #555;
+            color: #f3f4f6;
         }
 
         /* Tema butonu stili */
@@ -98,25 +122,59 @@
 <body>
 
 <div class="container">
-    <h1>BTE311 Çalışmalarım</h1>
-    <div class="project-links">       
-        <a href="hafta2.html">2.Hafta Ödev - Masal</a>
-        <a href="hafta3.html">3.Hafta Ödev - ses</a>
-        <a href="hafta7.html">7.hafta Ödev - 7.Hafta</a>
+    <h1>Örnek Projelerim</h1>
+    <div class="project-card">
+        <h2><a href="https://proje1.com" target="_blank">Proje 1</a></h2>
+        <p>Bu proje, atık yönetimi hakkında bilgi sunan bir mobil uygulamadır.</p>
+        <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">REST API</span>
+        </div>
+    </div>
+    <div class="project-card">
+        <h2><a href="https://proje2.com" target="_blank">Proje 2</a></h2>
+        <p>Bu proje, eğitim materyallerini yönetmeye yönelik bir web platformudur.</p>
+        <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+        </div>
+    </div>
+    <div class="project-card">
+        <h2><a href="https://proje3.com" target="_blank">Proje 3</a></h2>
+        <p>Bu proje, çevrimiçi kitap önerileri sunan bir öneri sistemidir.</p>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">Recommendation System</span>
+        </div>
     </div>
     <button class="theme-toggle-btn" onclick="toggleTheme()">Koyu Tema</button>
 </div>
 
 <script>
+    // Tema değiştirme fonksiyonu
     function toggleTheme() {
         document.body.classList.toggle("dark-theme");
         const btn = document.querySelector(".theme-toggle-btn");
         if (document.body.classList.contains("dark-theme")) {
             btn.textContent = "Açık Tema";
+            localStorage.setItem("theme", "dark"); // Tercihi kaydet
         } else {
             btn.textContent = "Koyu Tema";
+            localStorage.setItem("theme", "light"); // Tercihi kaydet
         }
     }
+
+    // Sayfa yüklenirken tema tercihine göre ayarla
+    window.onload = function() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-theme");
+            document.querySelector(".theme-toggle-btn").textContent = "Açık Tema";
+        }
+    };
 </script>
 
 </body>

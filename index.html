@@ -14,6 +14,8 @@
             height: 100vh;
             margin: 0;
             background-color: #f3f4f6;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -23,10 +25,11 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
         }
 
         h1 {
-            color: #333;
+            color: inherit;
         }
 
         .project-links a {
@@ -44,23 +47,77 @@
             background-color: #3498db;
             color: #fff;
         }
+
+        /* Koyu tema için stil ayarları */
+        .dark-theme {
+            background-color: #1e1e1e;
+            color: #f3f4f6;
+        }
+
+        .dark-theme .container {
+            background-color: #333;
+        }
+
+        .dark-theme .project-links a {
+            color: #77bdfb;
+            border-color: #77bdfb;
+        }
+
+        .dark-theme .project-links a:hover {
+            background-color: #77bdfb;
+            color: #1e1e1e;
+        }
+
+        /* Tema butonu stili */
+        .theme-toggle-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-theme .theme-toggle-btn {
+            color: #f3f4f6;
+            background-color: #555;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: #bbb;
+        }
+
+        .dark-theme .theme-toggle-btn:hover {
+            background-color: #777;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Örnek Projelerim</h1>
-    <div class="project-links">
-      <a href="hafta2.html">Hafta2 Ödev - Masal</a>
-      <a href="hafta3.html">Haftae Ödev - ses</a>
-      <a href="hafta7.html">7.hafta Ödev - 7.Hafta</a>
-        <a href="https://proje1.com" target="_blank">Proje 1</a>
-        <a href="https://proje2.com" target="_blank">Proje 2</a>
-        <a href="https://proje3.com" target="_blank">Proje 3</a>
+    <div class="project-links">       
+        <a href="hafta2.html">Hafta2 Ödev - Masal</a>
+        <a href="hafta3.html">Haftae Ödev - ses</a>
+        <a href="hafta7.html">7.hafta Ödev - 7.Hafta</a>
     </div>
+    <button class="theme-toggle-btn" onclick="toggleTheme()">Koyu Tema</button>
 </div>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("dark-theme");
+        const btn = document.querySelector(".theme-toggle-btn");
+        if (document.body.classList.contains("dark-theme")) {
+            btn.textContent = "Açık Tema";
+        } else {
+            btn.textContent = "Koyu Tema";
+        }
+    }
+</script>
 
 </body>
 </html>
-
-

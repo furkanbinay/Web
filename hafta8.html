@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farklı Yüz İfadeli Animasyonlu Divler</title>
+    <title>Animasyonlu Yüzler</title>
     <style>
         * {
             margin: 0;
@@ -28,7 +28,7 @@
             text-align: center;
         }
 
-        /* Gözler */
+        /* Yüz için gözler */
         .box::before, .box::after {
             content: '';
             width: 10px;
@@ -38,17 +38,18 @@
             position: absolute;
             top: 30px;
         }
+        /* Sol göz */
         .box::before {
             left: 30px;
         }
+        /* Sağ göz */
         .box::after {
             right: 30px;
         }
 
-        /* Farklı Ağız İfadeleri */
-        
-        /* Gülen ağız */
-        .happy .mouth {
+        /* Ağız */
+        .box .mouth {
+            position: absolute;
             bottom: 25px;
             left: 50%;
             width: 40px;
@@ -56,48 +57,6 @@
             background-color: black;
             border-radius: 0 0 20px 20px;
             transform: translateX(-50%);
-        }
-
-        /* Üzgün ağız */
-        .sad .mouth {
-            bottom: 25px;
-            left: 50%;
-            width: 40px;
-            height: 20px;
-            background-color: black;
-            border-radius: 20px 20px 0 0;
-            transform: translateX(-50%);
-        }
-
-        /* Şaşırmış ağız */
-        .surprised .mouth {
-            bottom: 30px;
-            left: 50%;
-            width: 15px;
-            height: 15px;
-            background-color: black;
-            border-radius: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Düz ağız */
-        .neutral .mouth {
-            bottom: 25px;
-            left: 50%;
-            width: 30px;
-            height: 5px;
-            background-color: black;
-            transform: translateX(-50%);
-        }
-
-        /* Mutlu göz kırpma efekti */
-        .wink::after {
-            width: 15px;
-            height: 5px;
-            background-color: black;
-            top: 35px;
-            right: 30px;
-            border-radius: 50%;
         }
 
         /* Yukarı-aşağı hareket eden */
@@ -152,19 +111,19 @@
     </style>
 </head>
 <body>
-    <div class="box move-up-down happy">
+    <div class="box move-up-down">
         <div class="mouth"></div>
     </div>
-    <div class="box grow-shrink sad">
+    <div class="box grow-shrink">
         <div class="mouth"></div>
     </div>
-    <div class="box fade-in-out surprised">
+    <div class="box fade-in-out">
         <div class="mouth"></div>
     </div>
-    <div class="box move-left-right neutral">
+    <div class="box move-left-right">
         <div class="mouth"></div>
     </div>
-    <div class="box rotate wink">
+    <div class="box rotate">
         <div class="mouth"></div>
     </div>
 </body>

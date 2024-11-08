@@ -22,8 +22,7 @@
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
             gap: 16px;
             max-width: 1200px;
             width: 100%;
@@ -31,7 +30,6 @@
         }
 
         .card {
-            flex: 1 1 calc(100% - 16px);
             background-color: #ffffff;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,21 +38,31 @@
         }
 
         /* Responsive kart düzeni */
-        @media (min-width: 576px) {
-            .card {
-                flex: 1 1 calc(50% - 16px);
+        @media (max-width: 575px) {
+            /* XS: 1 kart yan yana */
+            .container {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (min-width: 768px) {
-            .card {
-                flex: 1 1 calc(33.33% - 16px);
+        @media (min-width: 576px) and (max-width: 767px) {
+            /* SM: 2 kart yan yana */
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            /* MD: 3 kart yan yana */
+            .container {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (min-width: 992px) {
-            .card {
-                flex: 1 1 calc(16.66% - 16px);
+            /* LG: 6 kart yan yana */
+            .container {
+                grid-template-columns: repeat(6, 1fr);
             }
         }
     </style>
@@ -72,4 +80,3 @@
 
 </body>
 </html>
-

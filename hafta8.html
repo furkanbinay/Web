@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animasyonlu Divler</title>
+    <title>Animasyonlu Yüzler</title>
     <style>
         * {
             margin: 0;
@@ -23,6 +23,40 @@
             background-color: #3498db;
             margin: 20px;
             display: inline-block;
+            position: relative;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        /* Yüz için gözler */
+        .box::before, .box::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+        /* Sol göz */
+        .box::before {
+            left: 30px;
+        }
+        /* Sağ göz */
+        .box::after {
+            right: 30px;
+        }
+
+        /* Ağız */
+        .box .mouth {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            width: 40px;
+            height: 20px;
+            background-color: black;
+            border-radius: 0 0 20px 20px;
+            transform: translateX(-50%);
         }
 
         /* Yukarı-aşağı hareket eden */
@@ -77,10 +111,20 @@
     </style>
 </head>
 <body>
-    <div class="box move-up-down"></div>
-    <div class="box grow-shrink"></div>
-    <div class="box fade-in-out"></div>
-    <div class="box move-left-right"></div>
-    <div class="box rotate"></div>
+    <div class="box move-up-down">
+        <div class="mouth"></div>
+    </div>
+    <div class="box grow-shrink">
+        <div class="mouth"></div>
+    </div>
+    <div class="box fade-in-out">
+        <div class="mouth"></div>
+    </div>
+    <div class="box move-left-right">
+        <div class="mouth"></div>
+    </div>
+    <div class="box rotate">
+        <div class="mouth"></div>
+    </div>
 </body>
 </html>

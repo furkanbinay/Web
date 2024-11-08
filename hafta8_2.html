@@ -1,54 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartlar Örneği</title>
+  <style>
+    /* Genel stil */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .container-fluid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header,
+    .card-footer {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .card-body {
+      padding: 15px;
+      text-align: center;
+      color: #333;
+      font-size: 0.9em;
+      flex-grow: 1;
+    }
+
+    /* Responsive kart düzeni */
+    @media (min-width: 576px) {
+      .card {
+        flex: 1 1 calc(50% - 16px);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        flex: 1 1 calc(33.33% - 16px);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .card {
+        flex: 1 1 calc(16.66% - 16px);
+      }
+    }
+  </style>
 </head>
 <body>
- 
-<div class="container-fluid">
-<div class="row">
- 
-  <div class="card col-md-4 col-lg-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-   <div class="card col-md-4 col-lg-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-   <div class="card col-md-4 col-lg-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-   <div class="card col-md-4 col-lg-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
 
-    <div class="card col-md-4 col-lg-2">
+<div class="container-fluid">
+  <div class="card">
     <div class="card-header">Header</div>
     <div class="card-body">Content</div> 
     <div class="card-footer">Footer</div>
   </div>
- 
-    <div class="card col-md-4 col-lg-2">
+  <div class="card">
     <div class="card-header">Header</div>
     <div class="card-body">Content</div> 
     <div class="card-footer">Footer</div>
   </div>
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div> 
+    <div class="card-footer">Footer</div>
+  </div>
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div> 
+    <div class="card-footer">Footer</div>
+  </div>
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div> 
+    <div class="card-footer">Footer</div>
+  </div>
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div> 
+    <div class="card-footer">Footer</div>
   </div>
 </div>
 
 </body>
 </html>
-

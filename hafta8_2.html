@@ -1,112 +1,118 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kartlar Örneği</title>
-  <style>
-    /* Genel stil */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Kartlar - Flexbox</title>
+    <style>
+        /* Genel stil */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      padding: 20px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
 
-    .container-fluid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-    }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .card {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 200px;
-      display: flex;
-      flex-direction: column;
-    }
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            flex: 1 1 100%; /* Varsayılan olarak tam genişlik */
+        }
 
-    .card-header,
-    .card-footer {
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-    .card-body {
-      padding: 15px;
-      text-align: center;
-      color: #333;
-      font-size: 0.9em;
-      flex-grow: 1;
-    }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
 
-    /* Responsive kart düzeni */
-    @media (min-width: 576px) {
-      .card {
-        flex: 1 1 calc(50% - 16px);
-      }
-    }
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333333;
+        }
 
-    @media (min-width: 768px) {
-      .card {
-        flex: 1 1 calc(33.33% - 16px);
-      }
-    }
+        .card p {
+            color: #555555;
+            font-size: 0.95em;
+        }
 
-    @media (min-width: 992px) {
-      .card {
-        flex: 1 1 calc(16.66% - 16px);
-      }
-    }
-  </style>
+        /* Responsive kart düzeni */
+        @media (min-width: 576px) {
+            .card {
+                flex: 1 1 calc(50% - 16px); /* SM: 2 kart yan yana */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                flex: 1 1 calc(33.33% - 16px); /* MD: 3 kart yan yana */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .card {
+                flex: 1 1 calc(16.66% - 16px); /* LG: 6 kart yan yana */
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-  <div class="card">
-    <div class="card-header">Header</div>
-    <div class="card-body">Content</div> 
-    <div class="card-footer">Footer</div>
-  </div>
-</div>
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 1">
+            <h3>Kart 1</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 2">
+            <h3>Kart 2</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 3">
+            <h3>Kart 3</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 4">
+            <h3>Kart 4</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 5">
+            <h3>Kart 5</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Resim 6">
+            <h3>Kart 6</h3>
+            <p>Bu kartın açıklaması.</p>
+        </div>
+    </div>
 
 </body>
 </html>

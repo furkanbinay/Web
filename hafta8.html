@@ -28,7 +28,7 @@
             text-align: center;
         }
 
-        /* Yüz için gözler */
+       
         .box::before, .box::after {
             content: '';
             width: 10px;
@@ -38,16 +38,16 @@
             position: absolute;
             top: 30px;
         }
-        /* Sol göz */
+       
         .box::before {
             left: 30px;
         }
-        /* Sağ göz */
+        
         .box::after {
             right: 30px;
         }
 
-        /* Ağız */
+        
         .box .mouth {
             position: absolute;
             bottom: 25px;
@@ -59,7 +59,7 @@
             transform: translateX(-50%);
         }
 
-        /* Yukarı-aşağı hareket eden */
+        
         .move-up-down {
             animation: moveUpDown 2s infinite alternate;
         }
@@ -69,7 +69,7 @@
             100% { transform: translateY(50px); }
         }
 
-        /* Büyüyen, küçülen ve rengi değişen */
+        
         .grow-shrink {
             animation: growShrink 2s infinite alternate;
         }
@@ -79,7 +79,7 @@
             100% { transform: scale(1.5); background-color: #e74c3c; }
         }
 
-        /* Transparan değeri artıp azalan */
+       
         .fade-in-out {
             animation: fadeInOut 2s infinite alternate;
         }
@@ -89,7 +89,7 @@
             100% { opacity: 0.2; }
         }
 
-        /* Sağa-sola hareket eden */
+       
         .move-left-right {
             animation: moveLeftRight 2s infinite alternate;
         }
@@ -99,7 +99,7 @@
             100% { transform: translateX(50px); }
         }
 
-        /* Dönen */
+       
         .rotate {
             animation: rotate 2s infinite linear;
         }

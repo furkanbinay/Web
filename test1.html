@@ -1,1 +1,178 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programcılığı Sınavı</title>
+    <style>
+        /* Genel stil ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="url"], input[type="range"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            resize: vertical;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Web Programcılığı Sınavı</h1>
+    <form>
+        <!-- Metin Girişi -->
+        <div class="form-group">
+            <label for="name">Adınız:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- E-posta Girişi -->
+        <div class="form-group">
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Şifre Girişi -->
+        <div class="form-group">
+            <label for="password">Şifreniz:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Sayısal Giriş -->
+        <div class="form-group">
+            <label for="age">Yaşınız:</label>
+            <input type="number" id="age" name="age" min="0" max="120" required>
+        </div>
+
+        <!-- Tarih Girişi -->
+        <div class="form-group">
+            <label for="birthdate">Doğum Tarihi:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+
+        <!-- Web Site URL Girişi -->
+        <div class="form-group">
+            <label for="website">Web Siteniz:</label>
+            <input type="url" id="website" name="website">
+        </div>
+
+        <!-- Metin Alanı -->
+        <div class="form-group">
+            <label for="about">Kendinizden Bahsedin:</label>
+            <textarea id="about" name="about" rows="4"></textarea>
+        </div>
+
+        <!-- Tekli Seçim (Radyo) -->
+        <div class="form-group">
+            <label>Cinsiyet:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Erkek</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Kadın</label>
+        </div>
+
+        <!-- Çoklu Seçim (Checkbox) -->
+        <div class="form-group">
+            <label>İlgili Olduğunuz Alanlar:</label>
+            <input type="checkbox" id="frontend" name="interest" value="frontend">
+            <label for="frontend">Frontend</label>
+            <input type="checkbox" id="backend" name="interest" value="backend">
+            <label for="backend">Backend</label>
+            <input type="checkbox" id="design" name="interest" value="design">
+            <label for="design">Tasarım</label>
+        </div>
+
+        <!-- Aralık (Range) Girişi -->
+        <div class="form-group">
+            <label for="experience">Web Programlama Tecrübesi (Yıl):</label>
+            <input type="range" id="experience" name="experience" min="0" max="10">
+        </div>
+
+        <!-- Liste Kutusu (Select) -->
+        <div class="form-group">
+            <label for="language">En İyi Bildiğiniz Programlama Dili:</label>
+            <select id="language" name="language">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="csharp">C#</option>
+            </select>
+        </div>
+
+        <!-- Gönder Butonu -->
+        <button type="submit">Gönder</button>
+    </form>
+</div>
+
+</body>
+</html>

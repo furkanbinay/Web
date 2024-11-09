@@ -131,4 +131,23 @@ Lena, çiçeği köyüne götürüp herkesin hayatını değiştirmiş. Kıkır 
         document.querySelectorAll('.story-page').forEach(page => {
             page.classList.remove('active');
         });
-        document.getElementById(`page${page}`).classList
+        document.getElementById(`page${page}`).classList.add('active');
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+</script>
+
+</body>
+</html>

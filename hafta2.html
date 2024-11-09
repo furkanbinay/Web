@@ -6,7 +6,7 @@
     <title>Masal Sayfası</title>
     <style>
         /* Genel Stil Ayarları */
-        body {
+        html, body {
             font-family: 'Georgia', serif;
             display: flex;
             justify-content: center;
@@ -15,15 +15,18 @@
             margin: 0;
             background-color: #f3ebd5;
             color: #333;
+            overflow: hidden; /* Taşmayı gizler */
         }
 
         .story-container {
             max-width: 600px;
+            max-height: 90vh; /* Sayfa taşmasın diye sınırlama ekledik */
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            overflow-y: auto; /* İçerik fazla olduğunda kaydırma sağlar */
         }
 
         h1 {
@@ -125,29 +128,7 @@ Lena, çiçeği köyüne götürüp herkesin hayatını değiştirmiş. Kıkır 
     const totalPages = 4;
 
     function showPage(page) {
-        // Tüm sayfaları gizle
         document.querySelectorAll('.story-page').forEach(page => {
             page.classList.remove('active');
         });
-        
-        // Geçerli sayfayı göster
-        document.getElementById(`page${page}`).classList.add('active');
-    }
-
-    function nextPage() {
-        if (currentPage < totalPages) {
-            currentPage++;
-            showPage(currentPage);
-        }
-    }
-
-    function prevPage() {
-        if (currentPage > 1) {
-            currentPage--;
-            showPage(currentPage);
-        }
-    }
-</script>
-
-</body>
-</html>
+        document.getElementById(`page${page}`).classList

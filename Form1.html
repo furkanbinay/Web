@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Üye Ol ve Giriş Yap</title>
+  <style>
+    /* Genel Stil */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f3f4f6;
+    }
+
+    .container {
+      display: flex;
+      width: 800px;
+      max-width: 90%;
+      background: #fff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .form-container {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .form-container h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-group button:hover {
+      background: #45a049;
+    }
+
+    .switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #4CAF50;
+      color: #fff;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .switch-container:hover {
+      background: #45a049;
+    }
+
+    .switch-container h3 {
+      margin: 0;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .inactive {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container active" id="signup">
+      <h2>Üye Ol</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Kullanıcı Adı</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-posta</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Üye Ol</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-container inactive" id="login">
+      <h2>Giriş Yap</h2>
+      <form>
+        <div class="form-group">
+          <label for="login-email">E-posta</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Şifre</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Giriş Yap</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="switch-container" onclick="toggleForms()">
+      <h3 id="switch-text">Giriş Yap</h3>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const signupForm = document.getElementById("signup");
+      const loginForm = document.getElementById("login");
+      const switchText = document.getElementById("switch-text");
+
+      signupForm.classList.toggle("active");
+      signupForm.classList.toggle("inactive");
+      loginForm.classList.toggle("active");
+      loginForm.classList.toggle("inactive");
+
+      switchText.innerText = signupForm.classList.contains("active") ? "Giriş Yap" : "Üye Ol";
+    }
+  </script>
+</body>
+</html>
 

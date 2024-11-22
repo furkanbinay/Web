@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gradient Circles with Stylish Border</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      border: 8px double transparent; /* Çift kenar efekti */
-      background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6ec4, #7873f5);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      border-radius: 20px; /* Köşelerin yuvarlatılması */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Gölge efekti */
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(8, 50px);
-      grid-gap: 10px;
-    }
-    .circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & JavaScript Quiz</title>
+    <style>
+        /* CSS Başlangıcı */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        /* CSS Sonu */
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="grid" id="grid"></div>
-  </div>
-  <script>
-    const grid = document.getElementById('grid');
-    const rows = 8; // Satır sayısı
-    const cols = 8; // Sütun sayısı
 
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const circle = document.createElement('div');
-        circle.classList.add('circle');
+<div class="quiz-container">
+    <h1>HTML & JavaScript Quiz</h1>
+    <div id="quiz"></div>
+    <button id="submit">Submit</button>
+    <div id="result" class="result"></div>
+</div>
 
-        // Dinamik renk hesaplama
-        const hue1 = (row * 40 + col * 10) % 360; // İlk renk tonu
-        const hue2 = (hue1 + 90) % 360; // İkinci renk tonu
-        const saturation = 70; // Sabit canlılık
-        const lightness = 50; // Sabit parlaklık
-
-        // Gradyan rengi ayarla
-        circle.style.backgroundImage = `
-          linear-gradient(white, white),
-          radial-gradient(circle, hsl(${hue1}, ${saturation}%, ${lightness}%), hsl(${hue2}, ${saturation}%, ${lightness - 20}%))
-        `;
-        grid.appendChild(circle);
-      }
-    }
-  </script>
+<script src="quiz.js"></script>
 </body>
 </html>

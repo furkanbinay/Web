@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle Grid</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(8, 40px);
-            gap: 10px;
-        }
-
-        .circle {
-            width: 30px;
-            height: 30px;
-            border: 2px solid;
-            border-radius: 50%;
-        }
-
-        /* Gradient Coloring */
-        .circle:nth-child(1) { border-color: #00f; }
-        .circle:nth-child(2) { border-color: #22f; }
-        .circle:nth-child(3) { border-color: #44f; }
-        .circle:nth-child(4) { border-color: #66f; }
-        .circle:nth-child(5) { border-color: #88f; }
-        .circle:nth-child(6) { border-color: #aaf; }
-        .circle:nth-child(7) { border-color: #ccf; }
-        .circle:nth-child(8) { border-color: #0f0; }
-        /* Repeat for more rows dynamically or use a function generator instead*/
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Circles</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(8, 50px); /* Her satırda 8 daire olacak */
+      grid-gap: 10px;
+    }
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+  </style>
 </head>
+<body>
+  <div class="grid" id="grid"></div>
+  <script>
+    const grid = document.getElementById('grid');
+    const rows = 8; // Satır sayısı
+    const cols = 8; // Sütun sayısı
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+
+        // Dinamik renk hesaplama
+        const hue1 = (row * 40 + col * 10) % 360; // İlk renk tonu
+        const hue2 = (hue1 + 90) % 360; // İkinci renk tonu
+        const saturation = 70; // Sabit canlılık
+        const lightness = 50; // Sabit parlaklık
+
+        // Gradyan rengi ayarla
+        circle.style.backgroundImage = `
+          linear-gradient(white, white),
+          radial-gradient(circle, hsl(${hue1}, ${saturation}%, ${lightness}%), hsl(${hue2}, ${saturation}%, ${lightness - 20}%))
+        `;
+        grid.appendChild(circle);
+      }
+    }
+  </script>
+</body>
+</html>

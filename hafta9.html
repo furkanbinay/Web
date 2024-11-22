@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Grid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 40px);
+            gap: 10px;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border: 2px solid;
+            border-radius: 50%;
+        }
+
+        /* Gradient Coloring */
+        .circle:nth-child(1) { border-color: #00f; }
+        .circle:nth-child(2) { border-color: #22f; }
+        .circle:nth-child(3) { border-color: #44f; }
+        .circle:nth-child(4) { border-color: #66f; }
+        .circle:nth-child(5) { border-color: #88f; }
+        .circle:nth-child(6) { border-color: #aaf; }
+        .circle:nth-child(7) { border-color: #ccf; }
+        .circle:nth-child(8) { border-color: #0f0; }
+        /* Repeat for more rows dynamically or use a function generator instead*/
+    </style>
+</head>
+<body>
+<!-- This list updates next-section `-->
+js +flex count:adds continyes on repeats

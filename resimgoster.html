@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çiçekler - Responsive Kartlar</title>
     <style>
-        /* css düzenleme */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -74,6 +73,21 @@
             font-size: 0.9em;
         }
 
+        .card button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #5f7aff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #4c63d6;
+        }
+
         @media (min-width: 576px) {
             .card {
                 flex: 1 1 calc(50% - 16px);
@@ -102,34 +116,54 @@
             <img src="img/123.png" alt="Evangelon">
             <h3>Evangelion</h3>
             <p>Tam bir başyapıt bir anime serisi</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
         <div class="card">
             <img src="img/asd.png" alt="Evangelion2">
             <h3>Evangelion2</h3>
             <p>Herkesin izlemesi gereken bir başyapıt</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
         <div class="card">
-            <img src="img/gül.jpg" alt="Gül">
-            <h3>Gül</h3>
-            <p>Aşk ve güzellik sembolüdür.</p>
+            <img src="img/feedback.png" alt="feedback">
+            <h3>Bir kitap</h3>
+            <p>Felsefi açıdan bakarsak kitapta olmayabilir</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
         <div class="card">
             <img src="img/kayu.png" alt="kayyu">
             <h3>kayyuu</h3>
             <p>Keltoş bir çizgifilm karakteri</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
         <div class="card">
             <img src="img/1234.jpeg" alt="bne">
             <h3>Fürkan Binary</h3>
             <p>Böteci bir çocuk</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
         <div class="card">
             <img src="img/Untitled design.png" alt="hayt">
             <h3>Batan bir topluluk</h3>
             <p>HAYT atıkları yöneten bir topluluk</p>
+            <button onclick="toggleImage(this)">Resmi Gizle</button>
         </div>
     </div>
 
+    <script>
+        function toggleImage(button) {
+            const card = button.parentElement;
+            const img = card.querySelector('img');
+
+            if (img.style.display === 'none') {
+                img.style.display = '';
+                button.textContent = 'Resmi Gizle';
+            } else {
+                img.style.display = 'none';
+                button.textContent = 'Resmi Göster';
+            }
+        }
+    </script>
+
 </body>
 </html>
-

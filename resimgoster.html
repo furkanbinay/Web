@@ -11,18 +11,16 @@
             padding: 0;
         }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
-    background-size: cover;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+        body {
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         h1 {
             color: #ffffff;
@@ -164,6 +162,20 @@ body {
                 button.textContent = 'Resmi Göster';
             }
         }
+
+        function changeBackgroundColor() {
+            const colors = [
+                '#f8b195', '#f67280', '#c06c84',
+                '#6c5b7b', '#355c7d', '#99b898',
+                '#feceab', '#ff847c', '#e84a5f',
+                '#2a363b'
+            ];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+        }
+
+        // Sayfa yüklendiğinde arka plan rengini değiştir
+        window.onload = changeBackgroundColor;
     </script>
 
 </body>

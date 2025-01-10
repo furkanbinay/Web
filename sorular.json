@@ -1,17 +1,7 @@
 {
     "questions": [
       {
-        "question": "HTML'deki <div> etiketi ile <section> etiketi arasındaki farklar nelerdir?",
-        "options": [
-          "A. <div> daha semantik bir etikettir.",
-          "B. <section> belirli bir konu veya bölüm için kullanılır.",
-          "C. <div> sadece blok seviyesinde elemanları gruplar.",
-          "D. <section> sadece form etiketlerinde kullanılır."
-        ],
-        "correctAnswer": "B",
-        "topic": "HTML"
-      },
-      {
+      
         "question": "JavaScript'te 'var', 'let' ve 'const' arasındaki farklar nelerdir?",
         "options": [
           "A. 'var' fonksiyon kapsamına sahiptir, 'let' ve 'const' blok kapsamına sahiptir.",
